@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+  <body>
+    <section class="weather">
+      <div class="container">
+        <h1 class="weather__title">Weather</h1>
+        <h2 class="weather__subtitle">Select a city</h2>
+        <form class="weather-form">
+          <input
+            class="weather-form__text"
+            id="city"
+            type="text"
+            placeholdor="City"
+          />
+          <input class="btn btn-danger" type="submit" value="Search" />
+          <button id="get-location" class="btn btn-success">Current</button>
+        </form>
+        <div class="row weather-show align-items-center">
+          <div class="col">
+            <div class="weather-show__city" id="show-city">Cologne</div>
+            <div id="show-data"></div>
+            <div class="weather-show__degree" id="show-degree">15</div>
+            <div class="weather-show__cf">
+              <a id="show-celsius" href="#">°C</a>|<a
+                id="show-fahrenheit"
+                href="#"
+                >°F</a
+              >
+            </div>
+          </div>
+          <img
+            class="col weather-show__img"
+            src="src/images/undraw_weather_re_qsmd.svg"
+            alt="image"
+          />
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 6rem">
+              <h6 class="card-title">Monday</h6>
+              <img
+                src="src/images/undraw_weather_app_re_kcb1.svg"
+                class="card-img-top"
+                alt="image"
+              />
+              <div class="card-body">
+                <p class="card-text">+15°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 6rem">
+              <h6 class="card-title">Tuesday</h6>
+              <img
+                src="src/images/undraw_weather_app_re_kcb1.svg"
+                class="card-img-top"
+                alt="image"
+              />
+              <div class="card-body">
+                <p class="card-text">+15°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 6rem">
+              <h6 class="card-title">Wednesday</h6>
+              <img
+                src="src/images/undraw_weather_app_re_kcb1.svg"
+                class="card-img-top"
+                alt="image"
+              />
+              <div class="card-body">
+                <p class="card-text">+20°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 6rem">
+              <h6 class="card-title">Thursday</h6>
+              <img
+                src="src/images/undraw_weather_app_re_kcb1.svg"
+                class="card-img-top"
+                alt="image"
+              />
+              <div class="card-body">
+                <p class="card-text">+19°C</p>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div class="card" style="width: 6rem">
+              <h6 class="card-title">Friday</h6>
+              <img
+                src="src/images/undraw_weather_app_re_kcb1.svg"
+                class="card-img-top"
+                alt="image"
+              />
+              <div class="card-body">
+                <p class="card-text">+10°C</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="src/script/script.js"></script>
+  </body>
+</html>

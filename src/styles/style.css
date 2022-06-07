@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  color: #455d7a;
+  font-family: "Yeseva One", cursive;
+  line-height: 1.5;
+  padding-top: 20px;
+  background: linear-gradient(
+    178deg,
+    rgba(201, 234, 252, 0.51) 14.9%,
+    #ffffff80 80%
+  );
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.weather {
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid #c1baba;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 1px 4px 13px gainsboro;
+}
+
+.weather__title {
+  margin: 20px 0;
+}
+
+.weather__subtitle {
+  margin-bottom: 30px;
+}
+
+.weather-form {
+  margin-bottom: 50px;
+}
+
+.weather-show {
+  margin-bottom: 70px;
+}
+
+.weather-form__text {
+  width: 40%;
+  height: 39px;
+  border: 1px solid #c1baba;
+  box-shadow: 1px 4px 13px gainsboro;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.weather-show__cf {
+  position: relative;
+  top: -42px;
+  right: -46px;
+}
+
+.weather-show__city,
+.weather-show__degree {
+  font-family: "Oleo Script", cursive;
+  font-size: 30px;
+}
+
+.weather-show__img {
+  width: 50px;
+}
+
+.card {
+  border: 1px solid #c1baba;
+  margin-bottom: 42px;
+  box-shadow: 1px 4px 13px gainsboro;
+}
+
+.card-title {
+  position: relative;
+  top: -30px;
+  font-weight: 800;
+}
+
+.card-img-top {
+  padding: 10px;
+}
+
+.card-text,
+.weather-show__degree {
+  font-family: "Oleo Script", cursive;
+}
+
+@media (max-width: 600px) {
+  .weather-form__text {
+    width: 100%;
+  }
+  .btn-success,
+  .btn-danger {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 418px) {
+  .weather__title {
+    font-size: 35px;
+  }
+  .weather__subtitle {
+    font-size: 30px;
+  }
+  .weather-form__text {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .weather-show__img {
+    display: none;
+  }
+}
