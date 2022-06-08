@@ -17,6 +17,10 @@ h2 {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 .weather {
   width: 60%;
   margin: 0 auto;
@@ -35,11 +39,11 @@ h2 {
 }
 
 .weather-form {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .weather-show {
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .weather-form__text {
@@ -72,6 +76,10 @@ h2 {
   border: 1px solid #c1baba;
   margin-bottom: 42px;
   box-shadow: 1px 4px 13px gainsboro;
+}
+
+.card-body {
+  padding: 0.25rem;
 }
 
 .card-title {
