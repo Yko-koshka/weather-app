@@ -62,6 +62,15 @@ ul {
   right: -46px;
 }
 
+.weather-show__cf .active {
+  color: #455d7a;
+  cursor: default;
+}
+
+.weather-show__cf .active:hover {
+  text-decoration: none;
+}
+
 .weather-show__city,
 .weather-show__degree {
   font-family: "Oleo Script", cursive;
@@ -69,7 +78,7 @@ ul {
 }
 
 .weather-show__img {
-  width: 50px;
+  max-width: 140px;
 }
 
 .card {
@@ -106,7 +115,6 @@ ul {
   .weather-form__text {
     width: 100%;
   }
-  .btn-success,
   .btn-danger {
     margin-top: 10px;
   }

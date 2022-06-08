@@ -33,7 +33,6 @@
             placeholdor="City"
           />
           <input class="btn btn-danger" type="submit" value="Search" />
-          <button id="get-location" class="btn btn-success">Current</button>
         </form>
         <div class="row weather-show align-items-center">
           <div class="col">
@@ -41,22 +40,23 @@
             <div id="show-data"></div>
             <div class="weather-show__degree" id="show-degree">15</div>
             <div class="weather-show__cf">
-              <a id="show-celsius" href="#">°C</a>|<a
+              <a class="active" id="show-celsius" href="#">°C</a>|<a
                 id="show-fahrenheit"
                 href="#"
                 >°F</a
               >
             </div>
           </div>
+          <img
+            class="col weather-show__img"
+            src="src/images/undraw_weather_re_qsmd.svg"
+            id="icon"
+            alt="image"
+          />
           <ul class="col">
             <li>Humidity: <span id="humidity">12</span> %</li>
             <li>Wind: <span id="wind">25</span> km/h</li>
           </ul>
-          <img
-            class="col weather-show__img"
-            src="src/images/undraw_weather_re_qsmd.svg"
-            alt="image"
-          />
         </div>
         <div class="row">
           <div class="col d-flex justify-content-center">
