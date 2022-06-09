@@ -19,6 +19,43 @@ showData();
 
 let apiKey = "b008b611bf4075eb12ea48ff1a84b599";
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col d-flex justify-content-center">
+        <div class="card">
+          <h6 class="card-title">${day}</h6>
+          <img
+            src="src/images/undraw_weather_app_re_kcb1.svg"
+            class="card-img-top"
+            alt="image"
+          />
+          <div class="card-body">
+            <p class="card-text">15°C</p>
+            <p class="card-text">15°C</p>
+          </div>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+function getСoordinates(coord) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&units=metric&appid=${apiKey}`;
+  axios.get(`${apiUrl}`).then(displayForecast);
+}
+
 function showDegree(response) {
   celsiusTemperature = response.data.main.temp;
   let showDegree = Math.round(celsiusTemperature);
@@ -35,6 +72,8 @@ function showDegree(response) {
   getDegree.innerHTML = `${showDegree}`;
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${showWind}`;
+
+  getСoordinates(response.data.coord);
 }
 
 function showCity(event) {

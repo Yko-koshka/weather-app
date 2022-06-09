@@ -82,6 +82,7 @@ ul {
 }
 
 .card {
+  width: 4rem;
   border: 1px solid #c1baba;
   margin-bottom: 42px;
   box-shadow: 1px 4px 13px gainsboro;
@@ -95,6 +96,10 @@ ul {
   position: relative;
   top: -30px;
   font-weight: 800;
+}
+
+.card-text:last-child {
+  opacity: 0.5;
 }
 
 .card-img-top {
