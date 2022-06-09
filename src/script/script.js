@@ -19,31 +19,41 @@ showData();
 
 let apiKey = "b008b611bf4075eb12ea48ff1a84b599";
 
-function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-
+function convertDays(item) {
+  let date = new Date(item * 1000);
+  let day = date.getDay();
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+  return days[day];
+}
+
+function displayForecast(response) {
+  let getData = response.data.daily;
+  console.log(response);
+  let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  getData.forEach(function (day, index) {
+    if (index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col d-flex justify-content-center">
         <div class="card">
-          <h6 class="card-title">${day}</h6>
+          <h6 class="card-title">${convertDays(day.dt)}</h6>
           <img
-            src="src/images/undraw_weather_app_re_kcb1.svg"
+            src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png"
             class="card-img-top"
             alt="image"
           />
           <div class="card-body">
-            <p class="card-text">15°C</p>
-            <p class="card-text">15°C</p>
+            <p class="card-text">${Math.round(day.temp.max)}°C</p>
+            <p class="card-text">${Math.round(day.temp.min)}°C</p>
           </div>
         </div>
       </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
