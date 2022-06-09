@@ -1,3 +1,5 @@
+let apiKey = "b008b611bf4075eb12ea48ff1a84b599";
+
 function showData() {
   let days = [
     "Monday",
@@ -17,8 +19,6 @@ function showData() {
 }
 showData();
 
-let apiKey = "b008b611bf4075eb12ea48ff1a84b599";
-
 function convertDays(item) {
   let date = new Date(item * 1000);
   let day = date.getDay();
@@ -29,7 +29,6 @@ function convertDays(item) {
 
 function displayForecast(response) {
   let getData = response.data.daily;
-  console.log(response);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -58,7 +57,6 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
 function getСoordinates(coord) {
@@ -86,17 +84,21 @@ function showDegree(response) {
   getСoordinates(response.data.coord);
 }
 
-function showCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city").value;
+function showCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  let getCity = document.querySelector("#show-city");
-  getCity.innerHTML = `${city}`;
-
   axios.get(`${apiUrl}`).then(showDegree);
 }
+
+function buttonSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  showCity(city.value);
+}
+
 let submit = document.querySelector(".weather-form");
-submit.addEventListener("submit", showCity);
+submit.addEventListener("submit", buttonSubmit);
+
+showCity("Cologne");
 
 // Fahrenheit and celsius
 
