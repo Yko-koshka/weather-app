@@ -12,7 +12,8 @@ function showData() {
   ];
   let showData = document.querySelector("#show-data");
   let data = new Date();
-  showData.innerHTML = `${days[data.getDay()]} ${data.toLocaleTimeString([], {
+  let getDay = days[data.getDay() - 1];
+  showData.innerHTML = `${getDay} ${data.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
   })}`;
@@ -66,6 +67,8 @@ function getСoordinates(coord) {
 
 function showDegree(response) {
   celsiusTemperature = response.data.main.temp;
+  let city = document.querySelector("#show-city");
+
   let showDegree = Math.round(celsiusTemperature);
   let showWind = Math.round(response.data.wind.speed);
   let humidity = document.querySelector("#humidity");
@@ -80,14 +83,16 @@ function showDegree(response) {
   getDegree.innerHTML = `${showDegree}`;
   humidity.innerHTML = `${response.data.main.humidity}`;
   wind.innerHTML = `${showWind}`;
+  city.innerHTML = response.data.name;
 
   getСoordinates(response.data.coord);
 }
 
 function showCity(city) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}`).then(showDegree);
 }
+showCity("Cologne");
 
 function buttonSubmit(event) {
   event.preventDefault();
@@ -97,8 +102,6 @@ function buttonSubmit(event) {
 
 let submit = document.querySelector(".weather-form");
 submit.addEventListener("submit", buttonSubmit);
-
-showCity("Cologne");
 
 // Fahrenheit and celsius
 

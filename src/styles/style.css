@@ -24,7 +24,7 @@ ul {
 .weather {
   width: 60%;
   margin: 0 auto;
-  border: 1px solid #c1baba;
+  border: 1px solid #c1baba6b;
   border-radius: 5px;
   text-align: center;
   box-shadow: 1px 4px 13px gainsboro;
@@ -83,7 +83,7 @@ ul {
 
 .card {
   width: 4rem;
-  border: 1px solid #c1baba;
+  border: 1px solid #c1baba7d;
   margin-bottom: 42px;
   box-shadow: 1px 4px 13px gainsboro;
 }
