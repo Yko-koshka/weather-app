@@ -56,19 +56,10 @@ ul {
   padding: 10px;
 }
 
-.weather-show__cf {
+.weather-show__c {
   position: relative;
   top: -42px;
-  right: -46px;
-}
-
-.weather-show__cf .active {
-  color: #455d7a;
-  cursor: default;
-}
-
-.weather-show__cf .active:hover {
-  text-decoration: none;
+  right: -35px;
 }
 
 .weather-show__city,
