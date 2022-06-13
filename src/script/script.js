@@ -102,30 +102,3 @@ function buttonSubmit(event) {
 
 let submit = document.querySelector(".weather-form");
 submit.addEventListener("submit", buttonSubmit);
-
-// Fahrenheit and celsius
-
-// function snowFahrenheit(event) {
-//   event.preventDefault();
-//   let degree = document.querySelector("#show-degree");
-//   degree.innerHTML = `${Math.round((celsiusTemperature * 9) / 5 + 32)}`;
-
-//   celsius.classList.remove("active");
-//   fahrenheit.classList.add("active");
-// }
-// let fahrenheit = document.querySelector("#show-fahrenheit");
-// fahrenheit.addEventListener("click", snowFahrenheit);
-
-// function showCelsius(event) {
-//   event.preventDefault();
-//   let degree = document.querySelector("#show-degree");
-//   degree.innerHTML = Math.round(celsiusTemperature);
-
-//   celsius.classList.add("active");
-//   fahrenheit.classList.remove("active");
-// }
-
-// let celsiusTemperature = null;
-
-// let celsius = document.querySelector("#show-celsius");
-// celsius.addEventListener("click", showCelsius);
